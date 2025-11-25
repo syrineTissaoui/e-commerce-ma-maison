@@ -1,0 +1,40 @@
+<div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+  <div class="relative">
+    <img [src]="product.imageUrl" [alt]="product.name" class="w-full h-36 sm:h-48 object-contain p-2">
+    
+    <span *ngIf="product.badge" 
+          [class.bg-soft-red]="product.badgeColor === 'soft-red' || !product.badgeColor"
+          [class.bg-soft-blue]="product.badgeColor === 'soft-blue'"
+          class="absolute top-2 left-2 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
+      {{ product.badge }}
+    </span>
+  </div>
+
+  <div class="p-3 sm:p-4">
+    <h3 class="text-sm sm:text-base font-semibold text-gray-800 leading-snug hover:text-soft-blue cursor-pointer">
+      {{ product.name }}
+    </h3>
+    <p class="text-xs text-gray-500 mb-2">Réf: {{ product.ref }}</p>
+
+    <div class="flex items-end justify-between">
+      <div>
+        <p *ngIf="product.oldPrice" class="text-xs text-gray-400 line-through">
+          {{ product.oldPrice  }} DT
+        </p>
+        <p *ngIf="!product.oldPrice" class="text-xs text-gray-400 line-through opacity-0">.</p>
+        
+        <p class="text-lg sm:text-xl font-extrabold text-soft-red">
+          {{ product.price  }} DT
+        </p>
+      </div>
+
+      <button (click)="addToCart(product.name)" class="bg-soft-blue text-white p-2 rounded-full hover:bg-soft-hover transition">
+        <i class="fa-solid fa-shopping-cart text-sm"></i>
+      </button>
+    </div>
+
+    <p class="text-xs font-medium mt-2" [class]="getStockColor(product.stockStatus)">
+      <i class="fa-solid" [class]="getStockIcon(product.stockStatus)"></i> {{ product.stockStatus }}
+    </p>
+  </div>
+</div>

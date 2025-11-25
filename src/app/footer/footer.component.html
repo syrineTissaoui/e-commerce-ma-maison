@@ -1,0 +1,46 @@
+<footer class="bg-white border-t border-gray-200 mt-8 sm:mt-12">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 py-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+        
+        <div class="col-span-2 md:col-span-1">
+            <h4 class="text-2xl font-extrabold text-soft-blue mb-3">MA-MAISON-INFORMATIQUE<span class="text-soft-red">.TN</span></h4>
+            <p class="text-sm text-gray-600 mb-4">L'excellence au service de la performance informatique.</p>
+            <div class="flex space-x-3 text-xl">
+                <a href="#" class="text-gray-500 hover:text-soft-blue"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-gray-500 hover:text-soft-blue"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div>
+            <h5 class="font-bold text-soft-blue mb-4 text-base">CATÉGORIES</h5>
+            <ul class="space-y-2 text-sm text-gray-600">
+                <li *ngFor="let cat of footerCategories">
+                    <a [href]="cat.href" class="hover:text-soft-red">{{ cat.label }}</a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h5 class="font-bold text-soft-blue mb-4 text-base">INFORMATIONS</h5>
+            <ul class="space-y-2 text-sm text-gray-600">
+                <li *ngFor="let info of footerInfo">
+                    <a [href]="info.href" class="hover:text-soft-red">{{ info.label }}</a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <h5 class="font-bold text-soft-blue mb-4 text-base">CONTACT</h5>
+            <div class="space-y-3 text-sm text-gray-600">
+                <p *ngFor="let item of contactInfo">
+                    <i class="fa-solid mr-2 text-soft-red" [class]="item.icon"></i> {{ item.text }}
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-soft-blue">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 py-3 text-center text-xs text-white/80">
+            © 2025 Ma-Maison-Informatique . Tous droits réservés.
+        </div>
+    </div>
+</footer>

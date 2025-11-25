@@ -1,0 +1,71 @@
+<main class="max-w-7xl mx-auto px-4 lg:px-8 py-6">
+    
+    <div class="mb-6 bg-soft-red/10 p-4 rounded-xl border border-soft-red">
+        <h1 class="text-3xl font-extrabold text-soft-red border-l-4 border-soft-red pl-3">🔥 VENTES FLASH & PROMOS</h1>
+        <p class="text-gray-700 text-sm mt-1">Accueil / Promotions (Découvrez toutes les meilleures offres sur notre catalogue : {{ promoProducts.length }} produits)</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <aside class="lg:col-span-1 bg-white p-6 rounded-xl shadow-lg h-fit">
+            <h2 class="text-xl font-bold text-soft-blue mb-4">Filtrer par Catégorie</h2>
+
+            <div class="mb-5 border-b border-gray-200 pb-4">
+                <label for="category-filter" class="block text-sm font-semibold text-gray-700 mb-2">Catégorie</label>
+                <select id="category-filter" 
+                        (change)="onFilterChange($event, 'category')"
+                        class="w-full border border-gray-300 rounded-lg p-2 text-sm focus:ring-soft-blue focus:border-soft-blue">
+                    <option value="all">Toutes les Catégories</option>
+                    <option value="PC Portable">PC Portable</option>
+                    <option value="Composant PC">Composant PC</option>
+                    <option value="Périphérique">Périphérique</option>
+                    <option value="Écran">Écran</option>
+                </select>
+            </div>
+
+            <div class="mb-5 border-b border-gray-200 pb-4">
+                <p class="text-sm font-semibold text-gray-700 mb-2">Réduction Minimum</p>
+                <div class="space-y-2">
+                    <label class="flex items-center text-sm text-gray-600">
+                        <input type="checkbox" class="rounded text-soft-red focus:ring-soft-red mr-2"> 10% ou plus
+                    </label>
+                    <label class="flex items-center text-sm text-gray-600">
+                        <input type="checkbox" class="rounded text-soft-red focus:ring-soft-red mr-2"> 20% ou plus
+                    </label>
+                </div>
+            </div>
+
+            <button class="w-full py-2 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition">
+                <i class="fa-solid fa-undo mr-2"></i> Réinitialiser les filtres
+            </button>
+        </aside>
+
+        <section class="lg:col-span-3">
+            
+            <div class="flex justify-end items-center mb-6 bg-white p-3 rounded-xl shadow-md">
+                <label for="sort-by" class="text-sm text-gray-600 mr-2 font-medium">Trier par :</label>
+                <select id="sort-by" 
+                        [ngModel]="sortBy" 
+                        (change)="onFilterChange($event, 'sort')"
+                        class="border border-gray-300 rounded-lg p-2 text-sm focus:ring-soft-blue focus:border-soft-blue">
+                    <option value="discount_desc">Meilleure Réduction (Taux)</option>
+                    <option value="price_desc">Prix : Du plus cher au moins cher</option>
+                    <option value="price_asc">Prix : Du moins cher au plus cher</option>
+                </select>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+                <app-product-card *ngFor="let product of promoProducts" [product]="product"></app-product-card>
+            </div>
+
+            <div *ngIf="promoProducts.length === 0" class="text-center py-10 bg-white rounded-xl shadow-lg">
+                <i class="fa-solid fa-tags text-4xl text-soft-red/50 mb-4"></i>
+                <p class="text-xl text-gray-700 font-semibold">Désolé, aucune promotion active pour le moment !</p>
+                <p class="text-gray-500 mt-2">Revenez bientôt pour ne rien manquer.</p>
+            </div>
+
+            <div class="mt-8 flex justify-center">
+                </div>
+        </section>
+    </div>
+</main>

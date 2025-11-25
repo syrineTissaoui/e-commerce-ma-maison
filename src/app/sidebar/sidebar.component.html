@@ -1,0 +1,48 @@
+<div 
+  class="fixed top-0 left-0 h-full w-64 bg-white shadow-xl 
+         transform transition-transform duration-300 ease-in-out z-50 overflow-y-auto"
+  [ngClass]="{ 
+    'translate-x-0': isOpen,     
+    '-translate-x-full': !isOpen 
+  }"
+>
+  
+  <div class="p-4 sm:p-6">
+    <div class="flex justify-between items-center mb-6 border-b pb-4">
+      <span class="text-xl font-extrabold text-primary-red">Menu</span>
+      <button 
+        (click)="onClose()" 
+        class="text-2xl text-gray-700 hover:text-primary-red transition"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <nav class="space-y-2 text-base">
+      <a 
+        *ngFor="let category of categories"
+        [routerLink]="category.link"
+        routerLinkActive="nav-item-active" 
+        class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition duration-150"
+      >
+        <i class="fa-solid {{ category.icon }} mr-3 w-4"></i> {{ category.name }}
+      </a>
+    </nav>
+    
+    <div class="mt-8 pt-4 border-t border-gray-200 space-y-2">
+      <a [routerLink]="['/account']" class="block text-primary-red font-bold py-2 hover:underline">
+          <i class="fa-solid fa-user mr-2"></i> CONNEXION / INSCRIPTION
+      </a>
+      <a [routerLink]="['/contact']" class="block text-gray-700 py-2 hover:underline">
+          <i class="fa-solid fa-phone-volume mr-2"></i> CONTACTER-NOUS
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<div 
+  *ngIf="isOpen"
+  class="fixed inset-0 bg-black opacity-30 z-40 lg:hidden"
+  (click)="onClose()"
+></div>
