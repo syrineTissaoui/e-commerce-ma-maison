@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importation de la police Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Importation de Font Awesome (doit être configuré dans angular.json si ce n'est pas un CDN) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+
+/* Custom scrollbar for better visual appeal */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #1852f1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #1852f1; }
+
+
+/* Définition de la classe pour l'élément de navigation actif, basé sur vos styles personnalisés */
+.nav-item-active {
+    background-color: #fcebeb; /* Light background for active link */
+    color: #1852f1 !important; /* Force red text color */
+    font-weight: 600;
+}
+/* Product Card hover effect */
+.product-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.05);
+}
+
+/* Countdown circle style */
+.countdown-circle {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+    color: white;
+}
+
+/* Custom style for the large hero banner gradient */
+.hero-gradient-overlay {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+/* The side menu toggle from the screenshots */
+.sidebar-icon {
+    color: #1852f1;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
