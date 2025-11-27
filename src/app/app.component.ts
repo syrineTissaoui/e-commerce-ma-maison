@@ -16,7 +16,7 @@ import { RouterOutlet } from "@angular/router";
   imports: [
     CommonModule,
     HeaderComponent,
-    
+    FormsModule,
     FooterComponent,
     RouterOutlet
 ],

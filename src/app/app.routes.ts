@@ -6,6 +6,7 @@ import { PeripheralListComponent } from './peripheral-list/peripheral-list.compo
 import { ScreenListComponent } from './screen-list/screen-list.component';
 import { PromoListComponent } from './promo-list/promo-list.component';
 import { SupportPageComponent } from './support-page/support-page.component';
+import { QuoteRequestComponent} from './quote-request/quote-request.component'
 export const routes: Routes = [
   // Route de la page d'accueil (votre page principale)
   { path: '', component: HeroComponent, title: 'Ma-Maison-informatique Tunisie | Matériel Informatique' },
@@ -40,6 +41,11 @@ export const routes: Routes = [
     path: 'support', // Le chemin pour l'URL
     component: SupportPageComponent, 
     title: 'Support IT |Ma-Maison-informatique Tunisie' 
+  },
+   { 
+    path: 'Demande-devis', // Le chemin pour l'URL
+    component:QuoteRequestComponent  , 
+    title: 'Demande Devis |Ma-Maison-informatique Tunisie' 
   },
   
   // Redirection pour les chemins inconnus (404)
