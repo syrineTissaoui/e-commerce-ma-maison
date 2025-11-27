@@ -3,7 +3,7 @@
     <img [src]="product.imageUrl" [alt]="product.name" class="w-full h-36 sm:h-48 object-contain p-2">
     
     <span *ngIf="product.badge" 
-          [class.bg-soft-red]="product.badgeColor === 'soft-red' || !product.badgeColor"
+          [class.bg-b2s-orange]="product.badgeColor === 'b2s-orange' || !product.badgeColor"
           [class.bg-soft-blue]="product.badgeColor === 'soft-blue'"
           class="absolute top-2 left-2 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
       {{ product.badge }}
@@ -23,7 +23,7 @@
         </p>
         <p *ngIf="!product.oldPrice" class="text-xs text-gray-400 line-through opacity-0">.</p>
         
-        <p class="text-lg sm:text-xl font-extrabold text-soft-red">
+        <p class="text-lg sm:text-xl font-extrabold text-b2s-orange">
           {{ product.price  }} DT
         </p>
       </div>

@@ -1,7 +1,7 @@
 <main class="max-w-7xl mx-auto px-4 lg:px-8 py-6">
     
-    <div class="mb-6 bg-soft-red/10 p-4 rounded-xl border border-soft-red">
-        <h1 class="text-3xl font-extrabold text-soft-red border-l-4 border-soft-red pl-3">🔥 VENTES FLASH & PROMOS</h1>
+    <div class="mb-6 bg-b2s-orange/10 p-4 rounded-xl border border-b2s-orange">
+        <h1 class="text-3xl font-extrabold text-b2s-orange border-l-4 border-b2s-orange pl-3">🔥 VENTES FLASH & PROMOS</h1>
         <p class="text-gray-700 text-sm mt-1">Accueil / Promotions (Découvrez toutes les meilleures offres sur notre catalogue : {{ promoProducts.length }} produits)</p>
     </div>
 
@@ -27,10 +27,10 @@
                 <p class="text-sm font-semibold text-gray-700 mb-2">Réduction Minimum</p>
                 <div class="space-y-2">
                     <label class="flex items-center text-sm text-gray-600">
-                        <input type="checkbox" class="rounded text-soft-red focus:ring-soft-red mr-2"> 10% ou plus
+                        <input type="checkbox" class="rounded text-b2s-orange focus:ring-b2s-orange mr-2"> 10% ou plus
                     </label>
                     <label class="flex items-center text-sm text-gray-600">
-                        <input type="checkbox" class="rounded text-soft-red focus:ring-soft-red mr-2"> 20% ou plus
+                        <input type="checkbox" class="rounded text-b2s-orange focus:ring-b2s-orange mr-2"> 20% ou plus
                     </label>
                 </div>
             </div>
@@ -59,7 +59,7 @@
             </div>
 
             <div *ngIf="promoProducts.length === 0" class="text-center py-10 bg-white rounded-xl shadow-lg">
-                <i class="fa-solid fa-tags text-4xl text-soft-red/50 mb-4"></i>
+                <i class="fa-solid fa-tags text-4xl text-b2s-orange/50 mb-4"></i>
                 <p class="text-xl text-gray-700 font-semibold">Désolé, aucune promotion active pour le moment !</p>
                 <p class="text-gray-500 mt-2">Revenez bientôt pour ne rien manquer.</p>
             </div>

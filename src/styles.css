@@ -50,3 +50,31 @@
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Styles pour le conteneur circulaire de l'icône */
+.icon-circle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px; /* w-16 */
+  height: 64px; /* h-16 */
+  border-radius: 9999px; /* rounded-full */
+  background-color: white; /* bg-white */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+  padding: 8px; /* p-2 pour l'espacement intérieur */
+}
+
+/* Styles pour l'image à l'intérieur du cercle */
+.icon-circle-container img {
+  width: 100%; /* L'image prend toute la largeur du padding */
+  height: 100%;
+  object-fit: contain; /* S'assure que l'image tient sans être coupée */
+  max-width: 40px; /* Exemple: pour rendre l'icône plus petite et centrée */
+  max-height: 40px;
+}
+
+/* Ajoutez une bordure solide à la place du ring Tailwind pour un contrôle plus fin si nécessaire */
+.border-ring-blue-500 { border: 2px solid theme('colors.blue.500'); }
+.border-ring-teal-500 { border: 2px solid theme('colors.teal.500'); }
+.border-ring-green-500 { border: 2px solid theme('colors.green.500'); }
+.border-ring-red-500 { border: 2px solid theme('colors.red.500'); }

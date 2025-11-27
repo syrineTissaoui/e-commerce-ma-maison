@@ -1,32 +1,44 @@
 <main class="max-w-7xl mx-auto px-4 lg:px-8 py-6 space-y-8">
-
+    
     <div class="relative overflow-hidden rounded-xl shadow-lg h-48 sm:h-64">
-  <div *ngFor="let slide of slides; let i = index"
-       class="absolute inset-0 transition-opacity duration-700"
-       [class.opacity-100]="i === currentIndex"
-       [class.opacity-0]="i !== currentIndex">
-    <img [src]="slide.image" alt="Slide" class="w-full h-full object-cover object-center opacity-80">
-    <div class="absolute inset-0 flex flex-col justify-center p-6 sm:p-10">
-      <h1 class="text-2xl sm:text-4xl font-extrabold text-soft-blue leading-tight max-w-lg">{{ slide.title }}</h1>
-      <p class="text-sm sm:text-lg text-gray-700 mt-2 hidden sm:block">{{ slide.subtitle }}</p>
-      <a [href]="slide.buttonLink" class="mt-4 bg-soft-red text-white px-6 py-2 rounded-lg font-bold hover:bg-soft-red/90 transition self-start shadow-md text-sm sm:text-base">
-        {{ slide.buttonText }}
-      </a>
+        <div *ngFor="let slide of slides; let i = index"
+             class="absolute inset-0 transition-opacity duration-700"
+             [class.opacity-100]="i === currentIndex"
+             [class.opacity-0]="i !== currentIndex">
+            <img [src]="slide.image" alt="Slide" class="w-full h-full object-cover object-center opacity-80">
+            <div class="absolute inset-0 flex flex-col justify-center p-6 sm:p-10">
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-soft-blue leading-tight max-w-lg">{{ slide.title }}</h1>
+                <p class="text-sm sm:text-lg text-gray-700 mt-2 hidden sm:block">{{ slide.subtitle }}</p>
+                <a [href]="slide.buttonLink" class="mt-4 bg-b2s-orange text-white px-6 py-2 rounded-lg font-bold hover:bg-b2s-orange/90 transition self-start shadow-md text-sm sm:text-base">
+                    {{ slide.buttonText }}
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+            <button *ngFor="let slide of slides; let i = index" 
+                    (click)="goToSlide(i)"
+                    class="w-3 h-3 rounded-full"
+                    [ngClass]="{'bg-white': i === currentIndex, 'bg-white/50': i !== currentIndex}">
+            </button>
+        </div>
     </div>
-  </div>
 
-  <!-- Dots navigation -->
-  <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-    <button *ngFor="let slide of slides; let i = index" 
-            (click)="goToSlide(i)"
-            class="w-3 h-3 rounded-full"
-            [ngClass]="{'bg-white': i === currentIndex, 'bg-white/50': i !== currentIndex}">
-    </button>
-  </div>
-</div>
-
-
-
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-3">
+        <a *ngFor="let item of softwarePromos"
+           [href]="item.href"
+           class="p-4 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center justify-center text-center 
+                  bg-gray-50 transition duration-200 transform hover:scale-[1.02] hover:shadow-xl relative overflow-hidden group">
+            
+            <div class="w-20 h-20 mb-3 flex items-center justify-center overflow-hidden"> 
+                <img [src]="item.imageUrl" [alt]="item.title" class="w-full h-full object-contain">
+            </div>
+            
+            <h3 class="font-extrabold text-base text-gray-800 mt-2">{{ item.title }}</h3>
+            <div class="absolute inset-0 bg-gray-100 opacity-0 group-hover:opacity-10 transition duration-300 pointer-events-none rounded-xl"></div>
+        </a>
+    </section>
+    
     <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div *ngFor="let service of services" class="bg-white p-4 rounded-xl shadow flex items-center space-x-3 category-item">
             <i class="fa-solid text-2xl text-soft-blue" [class]="service.icon"></i>
@@ -38,12 +50,12 @@
     </section>
 
     <section>
-        <h2 class="text-2xl font-bold text-soft-blue mb-5 border-l-4 border-soft-red pl-3">Parcourir Nos Univers</h2>
+        <h2 class="text-2xl font-bold text-soft-blue mb-5 border-l-4 border-b2s-orange pl-3">Parcourir Nos Univers</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             <a *ngFor="let category of categories" 
                [href]="category.href"
                class="bg-white p-4 rounded-xl shadow text-center flex flex-col items-center justify-center category-item hover:shadow-lg">
-                <i class="fa-solid text-4xl text-soft-red mb-2" [class]="category.icon"></i>
+                <i class="fa-solid text-4xl text-soft-blue mb-2" [class]="category.icon"></i>
                 <span class="font-semibold text-sm text-gray-800">{{ category.name }}</span>
             </a>
         </div>
@@ -51,8 +63,8 @@
 
     <section>
         <div class="flex justify-between items-center mb-5">
-            <h2 class="text-2xl font-bold text-soft-blue border-l-4 border-soft-red pl-3">VENTE FLASH LIMITÉE</h2>
-            <a href="#" class="text-soft-blue font-semibold hover:text-soft-red text-sm hidden sm:block">
+            <h2 class="text-2xl font-bold text-soft-blue border-l-4 border-b2s-orange pl-3">VENTE FLASH LIMITÉE</h2>
+            <a href="#" class="text-soft-blue font-semibold hover:text-b2s-orange text-sm hidden sm:block">
                 Voir Tout <i class="fa-solid fa-chevron-right ml-1 text-xs"></i>
             </a>
         </div>
@@ -63,23 +75,23 @@
     </section>
     
     <section class="bg-soft-blue rounded-xl shadow-xl p-6 sm:p-10 text-white flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-    <div>
-        <h2 class="text-xl sm:text-3xl font-extrabold flex items-center">
-            <i class="fa-solid fa-headset mr-3 text-soft-red"></i> SUPPORT IT INTÉGRÉ
-        </h2>
-        <p class="text-sm sm:text-lg mt-1">
-            Diagnostic en ligne, assistance à distance, et compatibilité : La vraie différence ma maison informatique.
-        </p>
-    </div>
-    <a [href]="'/support'" class="bg-soft-red text-white font-bold px-6 py-3 rounded-lg shadow-md hover:bg-soft-red/90 transition whitespace-nowrap">
-        ACCÉDER AU CENTRE D'AIDE
-    </a>
-</section>
+        <div>
+            <h2 class="text-xl sm:text-3xl font-extrabold flex items-center">
+                <i class="fa-solid fa-headset mr-3 text-b2s-orange"></i> SUPPORT IT INTÉGRÉ
+            </h2>
+            <p class="text-sm sm:text-lg mt-1">
+                Diagnostic en ligne, assistance à distance, et compatibilité : La vraie différence ma maison informatique.
+            </p>
+        </div>
+        <a [href]="'/support'" class="bg-b2s-orange text-white font-bold px-6 py-3 rounded-lg shadow-md hover:bg-b2s-orange/90 transition whitespace-nowrap">
+            ACCÉDER AU CENTRE D'AIDE
+        </a>
+    </section>
 
     <section>
         <div class="flex justify-between items-center mb-5">
-            <h2 class="text-2xl font-bold text-soft-blue border-l-4 border-soft-red pl-3">PC PORTABLES</h2>
-            <a href="#" class="text-soft-blue font-semibold hover:text-soft-red text-sm hidden sm:block">
+            <h2 class="text-2xl font-bold text-soft-blue border-l-4 border-b2s-orange pl-3">PC PORTABLES</h2>
+            <a href="#" class="text-soft-blue font-semibold hover:text-b2s-orange text-sm hidden sm:block">
                 Voir Toute la Catégorie <i class="fa-solid fa-chevron-right ml-1 text-xs"></i>
             </a>
         </div>

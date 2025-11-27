@@ -39,7 +39,7 @@ export class LaptopListComponent implements OnInit {
         imageUrl: 'https://placehold.co/400x300/F0F0F0/003366?text=ASUS+ROG+Gamer',
         price: 8999.000,
         badge: 'ULTRA GAMING',
-        badgeColor: 'soft-red',
+        badgeColor: 'b2s-orange',
         stockStatus: 'Stock Limité'
       },
       {
@@ -49,7 +49,7 @@ export class LaptopListComponent implements OnInit {
         price: 1550.000,
         oldPrice: 1900.000,
         badge: 'PROMO',
-        badgeColor: 'soft-red',
+        badgeColor: 'b2s-orange',
         stockStatus: 'Stock Très Limité'
       },
       {

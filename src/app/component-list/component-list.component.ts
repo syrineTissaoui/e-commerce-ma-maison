@@ -32,7 +32,7 @@ export class ComponentListComponent implements OnInit {
         imageUrl: 'https://placehold.co/400x300/F0F0F0/003366?text=RTX+4070',
         price: 3200.000,
         badge: 'TOP VENTE',
-        badgeColor: 'soft-red',
+        badgeColor: 'b2s-orange',
         stockStatus: 'En Stock'
       },
       {
@@ -51,7 +51,7 @@ export class ComponentListComponent implements OnInit {
         price: 580.000,
         oldPrice: 700.000,
         badge: 'PROMO',
-        badgeColor: 'soft-red',
+        badgeColor: 'b2s-orange',
         stockStatus: 'En Stock'
       },
       {

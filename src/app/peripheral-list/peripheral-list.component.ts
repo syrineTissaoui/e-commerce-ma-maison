@@ -31,7 +31,7 @@ export class PeripheralListComponent implements OnInit {
         imageUrl: 'https://placehold.co/400x300/F0F0F0/003366?text=Souris+G502',
         price: 180.000,
         badge: 'TOP VENTE',
-        badgeColor: 'soft-red',
+        badgeColor: 'b2s-orange',
         stockStatus: 'En Stock'
       },
       {
@@ -50,7 +50,7 @@ export class PeripheralListComponent implements OnInit {
         price: 320.000,
         oldPrice: 400.000,
         badge: 'FLASH -15%',
-        badgeColor: 'soft-red',
+        badgeColor: 'b2s-orange',
         stockStatus: 'En Stock'
       },
       {

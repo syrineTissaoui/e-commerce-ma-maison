@@ -35,7 +35,7 @@ export class PromoListComponent implements OnInit {
         price: 1550.000,
         oldPrice: 1900.000,
         badge: 'PROMO', // C'est un type literal, mais TypeScript est strict
-        badgeColor: 'soft-red', // C'est un type literal
+        badgeColor: 'b2s-orange', // C'est un type literal
         stockStatus: 'Stock Très Limité',
         category: 'PC Portable'
       },
@@ -47,7 +47,7 @@ export class PromoListComponent implements OnInit {
         price: 580.000,
         oldPrice: 700.000,
         badge: 'PROMO',
-        badgeColor: 'soft-red',
+        badgeColor: 'b2s-orange',
         stockStatus: 'En Stock',
         category: 'Composant PC'
       },
@@ -59,7 +59,7 @@ export class PromoListComponent implements OnInit {
         price: 320.000,
         oldPrice: 400.000,
         badge: 'FLASH -15%',
-        badgeColor: 'soft-red',
+        badgeColor: 'b2s-orange',
         stockStatus: 'En Stock',
         category: 'Périphérique'
       },
@@ -71,7 +71,7 @@ export class PromoListComponent implements OnInit {
         price: 490.000,
         oldPrice: 550.000,
         badge: 'PROMO',
-        badgeColor: 'soft-red',
+        badgeColor: 'b2s-orange',
         stockStatus: 'En Stock',
         category: 'Écran'
       },

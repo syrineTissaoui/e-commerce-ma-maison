@@ -61,7 +61,7 @@ export class HeroComponent implements OnInit {
       price: 1899.000,
       oldPrice: 2199.000,
       badge: 'PROMO',
-      badgeColor: 'soft-red',
+      badgeColor: 'b2s-orange',
       stockStatus: 'Stock Limité'
     },
     {
@@ -80,7 +80,7 @@ export class HeroComponent implements OnInit {
       price: 1062.500,
       oldPrice: 1250.000,
       badge: 'FLASH -15%',
-      badgeColor: 'soft-red',
+      badgeColor: 'b2s-orange',
       stockStatus: 'Stock Très Limité'
     },
     {
@@ -107,7 +107,7 @@ export class HeroComponent implements OnInit {
       imageUrl: 'https://placehold.co/400x300/F0F0F0/003366?text=Laptop+Pro',
       price: 4990.000,
       badge: 'TOP VENTE',
-      badgeColor: 'soft-red',
+      badgeColor: 'b2s-orange',
       stockStatus: 'En Stock'
     },
     {
@@ -125,6 +125,38 @@ export class HeroComponent implements OnInit {
       stockStatus: 'En Stock'
     },
   ];
+  // --- Dans votre component.ts (ex: HomeComponent) ---
+
+softwarePromos = [
+  {
+    title: 'Logiciels Bureautique',
+    imageUrl: '/assets/images/logo-windows-office.png', // Remplacez par le chemin réel
+    href: '/logiciels/bureautique',
+    backgroundColor: 'bg-white',
+    ringColor: 'ring-blue-500' // Pour le logo Windows/Office
+  },
+  {
+    title: 'Logiciels Conception',
+    imageUrl: '/assets/images/logo-autodesk.png', // Remplacez par le chemin réel
+    href: '/logiciels/conception',
+    backgroundColor: 'bg-white',
+    ringColor: 'ring-teal-500' // Pour le logo Autodesk
+  },
+  {
+    title: 'Antivirus et Sécurité',
+    imageUrl: '/assets/images/logo-securite.png', // Remplacez par le chemin réel
+    href: '/antivirus',
+    backgroundColor: 'bg-white',
+    ringColor: 'ring-green-500' // Pour l'icône de bouclier
+  },
+  {
+    title: 'Offres Spéciales',
+    imageUrl: '/assets/images/sticker-promo.png', // Remplacez par le chemin réel
+    href: '/promotions',
+    backgroundColor: 'bg-white',
+    ringColor: 'ring-red-500' // Pour le sticker rouge
+  },
+];
 
   // Data for the Service Banner
   services = [

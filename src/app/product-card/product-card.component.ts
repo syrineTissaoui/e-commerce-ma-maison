@@ -10,7 +10,7 @@ export interface Product {
   oldPrice?: number;
   badge?: 'PROMO' | 'NOUVEAU' | 'TOP VENTE' | 'FLASH -15%' | 'BUSINESS' | 'ULTRA GAMING';
  
-  badgeColor?: 'soft-red' | 'soft-blue'; // Tailwind classes defined in config
+  badgeColor?: 'b2s-orange' | 'soft-blue'; // Tailwind classes defined in config
   stockStatus: 'En Stock' | 'Stock Limité' | 'Stock Très Limité' | 'Bientôt Disponible';
   category?: 'PC Portable' | 'Composant PC' | 'Périphérique' | 'Écran'; // ou string si vous voulez plus de flexibilité
 }

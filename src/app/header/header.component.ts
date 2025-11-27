@@ -13,23 +13,25 @@ export class HeaderComponent {
   cartCount: number = 3; // Example data binding
 
   desktopNavItems = [
-    { label: 'ACCUEIL', dropdown: false, href: '/' },
-    { label: 'PC PORTABLES', dropdown: true, href: '/pc-portables'},
-    { label: 'COMPOSANTS PC', dropdown: true, href: '/composants-pc' },
-    { label: 'PÉRIPHÉRIQUES', dropdown: true, href: '/peripheriques' },
-    { label: 'ÉCRANS', dropdown: true, href: '/ecrans' },
-    { label: 'PROMOS', dropdown: false,href: '/promos', isPromo: true },
-    { label: 'SUPPORT-IT', dropdown: true,href: '/support'},
+    { label: 'Accueil  ', dropdown: false, href: '/' },
+    { label: 'Informatique ', dropdown: true, href: '/pc-portables'},
+    { label: 'Stockages ', dropdown: true, href: '/composants-pc' },
+    { label: 'Téléphones & Tablettes', dropdown: true, href: '/peripheriques' },
+    { label: 'Logiciels ', dropdown: true, href: '/ecrans' },
+    { label: 'Promos', dropdown: false,href: '/promos', isPromo: true },
+    { label: 'Impression ', dropdown: true, href: '/ecrans' },
+    { label: 'Support IT', dropdown: true,href: '/support'},
 
 
   ];
 
   mobileCategories = [
-    { name: 'PC Portables', icon: 'fa-laptop', href: '/pc-portables'},
-    { name: 'Composants PC', icon: 'fa-microchip',  href: '/composants-pc' },
-    { name: 'Périphériques', icon: 'fa-keyboard', href: '/peripheriques' },
-    { name: 'Écrans', icon: 'fa-desktop',href: '/ecrans' },
-    { name: 'SUPPORT-IT',  icon: 'fa-desktop',href: '/support'},
+   { name: 'Informatique', icon: 'fa-laptop', href: '/pc-portables'},
+    { name: 'Stockages', icon: 'fa-hard-drive', href: '/composants-pc' },
+    { name: 'Téléphones & Tablettes', icon: 'fa-mobile-screen', href: '/peripheriques' },
+    { name: 'Logiciels', icon: 'fa-cube', href: '/logiciels' },
+    { name: 'Impression', icon: 'fa-print', href: '/imprimantes' },
+    { name: 'Support IT', icon: 'fa-headset', href: '/support'},
 
   ];
 

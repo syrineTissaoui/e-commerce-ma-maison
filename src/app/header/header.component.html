@@ -1,10 +1,20 @@
 <div class="bg-white border-b border-gray-100 hidden lg:block">
     <div class="max-w-7xl mx-auto px-4 lg:px-8 flex justify-between items-center text-sm py-2">
+        
         <div class="flex space-x-6 text-gray-600">
-            <a href="#" class="hover:text-soft-blue"><i class="fa-solid fa-phone mr-1"></i> +216 56 343 111</a>
-            <a href="#" class="hover:text-soft-blue"><i class="fa-solid fa-envelope mr-1"></i> Ma-Maison-informatique.gmail.com</a>
+            <a href="#" class="hover:text-soft-blue">
+                <i class="fa-solid fa-phone mr-1"></i> +216 56 343 111
+            </a>
+            <a href="#" class="hover:text-soft-blue">
+                <i class="fa-solid fa-envelope mr-1"></i> Ma-Maison-informatique.gmail.com
+            </a>
         </div>
-       
+        
+        <a href="#" class="text-gray-600 hover:text-soft-blue flex flex-col items-center p-1">
+                <i class="fa-solid fa-user text-xl"></i>
+                <span class="text-xs hidden sm:block">Mon Compte</span>
+            </a>
+        
     </div>
 </div>
 
@@ -15,7 +25,7 @@
             <button (click)="toggleMobileMenu()" class="text-xl text-soft-blue lg:hidden mr-2">
                 <i class="fa-solid fa-bars"></i>
             </button>
-            <span class="text-3xl font-extrabold text-soft-blue">MA-MAISON-INFO<span class="text-soft-red">.TN</span></span>
+            <span class="text-3xl font-extrabold text-soft-blue">MA-MAISON-INFO<span class="text-b2s-orange">.TN</span></span>
         </div>
 
         <div class="flex-grow max-w-full md:max-w-xl order-3 mt-3 md:mt-0 md:order-2 w-full">
@@ -29,13 +39,13 @@
 
         <div class="flex items-center space-x-4 order-2 md:order-3 text-sm font-medium">
             <a href="#" class="text-gray-600 hover:text-soft-blue flex flex-col items-center p-1">
-                <i class="fa-solid fa-user text-xl"></i>
-                <span class="text-xs hidden sm:block">Mon Compte</span>
+<i class="fa-solid fa-file-invoice-dollar text-xl"></i>                
+<span class="text-xs hidden sm:block">Demande de devis</span>
             </a>
             <a href="#" class="text-gray-600 hover:text-soft-blue flex flex-col items-center p-1 relative">
                 <i class="fa-solid fa-shopping-cart text-xl"></i>
                 <span class="text-xs hidden sm:block">Panier</span>
-                <span class="absolute top-0 right-0 -mt-1 -mr-2 bg-soft-red text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">{{ cartCount }}</span>
+                <span class="absolute top-0 right-0 -mt-1 -mr-2 bg-b2s-orange text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">{{ cartCount }}</span>
             </a>
         </div>
     </div>
@@ -43,14 +53,19 @@
 
 <nav class="bg-soft-blue hidden lg:block shadow-lg">
     <div class="max-w-7xl mx-auto px-4 lg:px-8 flex space-x-6 text-white font-medium">
-        <a href="#" class="flex items-center bg-soft-red px-5 py-3 hover:bg-soft-red/90 transition duration-150 rounded-bl-lg rounded-br-lg text-sm">
-            <i class="fa-solid fa-list-ul mr-2"></i> TOUTES LES CATÉGORIES
-        </a>
+       <a href="#" class="flex items-center 
+       bg-gradient-to-r from-soft-blue to-b2s-orange 
+       px-5 py-3 
+       hover:from-soft-blue/90 hover:to-b2s-orange/90 
+       transition duration-150 
+       rounded-bl-lg rounded-br-lg text-sm text-white font-semibold">
+    <i class="fa-solid fa-list-ul mr-2"></i> TOUTES LES CATÉGORIES
+</a>
         <a *ngFor="let item of desktopNavItems" 
            [routerLink]="item.href"
-           class="px-3 py-3 hover:text-soft-red transition duration-150"
+           class="px-3 py-3 hover:text-b2s-orange transition duration-150"
            [class.nav-link-dropdown]="item.dropdown"
-           [class.text-soft-red]="item.isPromo"
+           [class.text-b2s-orange]="item.isPromo"
            [class.font-bold]="item.isPromo">
            {{ item.label }}
         </a>
@@ -72,10 +87,12 @@
           <i class="fa-solid" [class]="cat.icon"></i> {{ cat.name }}
         </a>
 
-        <a href="#" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 font-bold"><i class="fa-solid fa-percent mr-3"></i> Promos & Offres</a>
+        <a href="/promos" class="block px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-100 font-bold"><i class="fa-solid fa-percent mr-3"></i> Promos </a>
     </nav>
     <div class="mt-8 pt-4 border-t border-gray-200 space-y-3">
-         <a href="#" class="block text-soft-blue font-bold py-2"><i class="fa-solid fa-user mr-2"></i> Mon Compte</a>
+        <a href="#" class="block text-soft-blue font-bold py-2"><i class="fa-solid fa-user mr-2"></i> Mon Compte</a>
+         <a href="#" class="block text-soft-blue font-bold py-2"><i class="fa-solid fa-file-invoice-dollar text-xl"></i>  Demande de 
+        devis</a>
          <a href="#" class="block text-gray-700 py-2"><i class="fa-solid fa-phone-volume mr-2"></i> Contacter-nous</a>
          <a href="#" class="block text-gray-700 py-2"><i class="fa-solid fa-truck-fast mr-2"></i> Suivre ma commande</a>
     </div>

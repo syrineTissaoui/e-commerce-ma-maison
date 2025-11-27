@@ -32,7 +32,7 @@ export class ScreenListComponent implements OnInit {
         imageUrl: 'https://placehold.co/400x300/F0F0F0/003366?text=Ecran+Odyssey',
         price: 1850.000,
         badge: 'TOP VENTE',
-        badgeColor: 'soft-red',
+        badgeColor: 'b2s-orange',
         stockStatus: 'En Stock'
       },
       {
@@ -51,7 +51,7 @@ export class ScreenListComponent implements OnInit {
         price: 490.000,
         oldPrice: 550.000,
         badge: 'PROMO',
-        badgeColor: 'soft-red',
+        badgeColor: 'b2s-orange',
         stockStatus: 'En Stock'
       },
       // Ajoutez d'autres produits ici...
